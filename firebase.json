@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "online-aram-lejelento",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

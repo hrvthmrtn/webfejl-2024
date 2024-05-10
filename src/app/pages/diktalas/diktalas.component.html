@@ -1,0 +1,50 @@
+<div class="oraallasDiktalas">
+      <h1>Áram óraállás diktálása</h1>
+<div class="break"></div>
+      <form [formGroup]="diktalasForm" (ngSubmit)="addOraallas()">
+            <div>
+                  <mat-form-field>
+                        <mat-label for="name">Név:</mat-label>
+                        <input matInput type="text" formControlName="name" />
+                  </mat-form-field>
+            </div><br/>
+
+            <div class="break"></div>
+            <div>
+                  <mat-form-field>
+                        <mat-label for="using_place">Felhasználás helye:</mat-label>
+                        <input matInput type="text" formControlName="using_place" /><br/>
+                  </mat-form-field>
+            </div><br/>
+
+            <div class="break"></div>
+            <div>
+                  <mat-form-field>
+                        <mat-label for="oraallas">Jelenlegi óraállás:</mat-label>
+                        <input matInput type="number" formControlName="oraallas" /><br/>
+                  </mat-form-field>
+            </div><br/>
+
+            <div class="break"></div>
+            <div>
+                  <button mat-raised-button color="primary" type="submit">Bejelentem!</button>  
+            </div>
+      </form>
+</div>
+<div class="break"></div>
+<div *ngIf="diktalasok.length">
+      <table>
+            <tr>
+                  <th>Név</th>
+                  <th>Felhasználás helye</th>
+                  <th>Jelenlegi óraállás</th>
+                  <th>Diktálás időpontja</th>
+            </tr>
+            <tr *ngFor="let diktalas of diktalasok;">
+                  <td>{{diktalas.name}}</td>
+                  <td>{{diktalas.using_place}}</td>
+                  <td>{{diktalas.oraallas}}</td>
+                  <td>{{diktalas.date | dateFormat}}</td>
+            </tr>
+      </table>
+</div>
